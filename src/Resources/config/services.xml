@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service class="SwagBundleExample\Core\Content\Bundle\BundleDefinition" id="swag_bundle_example_core_content_bundle.bundle_definition">
+            <tag name="shopware.entity.definition" entity="swag_bundle"></tag>
+        </service>
+
+        <service class="SwagBundleExample\Core\Content\Bundle\Aggregate\BundleProduct\BundleProductDefinition" id="swag_bundle_example_core_content_bundle.aggregate_bundle_product.bundle_product_definition">
+            <tag name="shopware.entity.definition" entity="swag_bundle_product"></tag>
+        </service>
+
+        <service class="SwagBundleExample\Core\Content\Product\ProductExtension" id="swag_bundle_example.core.content.product.product_extension">
+            <tag name="shopware.entity.extension"></tag>
+        </service>
+    </services>
+</container>

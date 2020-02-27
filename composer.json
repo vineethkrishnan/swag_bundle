@@ -1,0 +1,27 @@
+{
+    "name": "swag/swag-bundle-example",
+    "description": "Swag Bundle plugin",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "VinSware",
+            "homepage": "http://vineethkrishnan.in",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SwagBundleExample\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "SwagBundleExample\\SwagBundleExample",
+        "label": {
+            "de-DE": "Swag Bundle plugin",
+            "en-GB": "Swag Bundle plugin"
+        },
+        "copyright": "(c) by VinSware AG"
+    }
+}
