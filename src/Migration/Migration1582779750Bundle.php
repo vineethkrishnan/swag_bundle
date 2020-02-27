@@ -42,6 +42,21 @@ class Migration1582779750Bundle extends MigrationStep
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ');
 
+        $connection->executeQuery('
+            CREATE TABLE IF NOT EXISTS `swag_bundle_translation` (
+              `swag_bundle_id` BINARY(16) NOT NULL,
+              `language_id` BINARY(16) NOT NULL,
+              `name` VARCHAR(255),
+              `created_at` DATETIME(3) NOT NULL,
+              `updated_at` DATETIME(3) NULL,
+              PRIMARY KEY (`swag_bundle_id`, `language_id`),
+              CONSTRAINT `fk.bundle_translation.bundle_id` FOREIGN KEY (`swag_bundle_id`)
+                REFERENCES `swag_bundle` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+              CONSTRAINT `fk.bundle_translation.language_id` FOREIGN KEY (`language_id`)
+                REFERENCES `language` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        ');
+
         $this->updateInheritance($connection, 'product', 'bundles');
     }
 
